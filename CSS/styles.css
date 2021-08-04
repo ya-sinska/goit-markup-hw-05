@@ -136,7 +136,22 @@ body {
   color: var(--accent-text-color);
 }
 .site-nav.link.current {
+  position: relative;
+
   color: var(--accent-text-color);
+}
+.site-nav.link.current::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: #2196F3;
+  border-radius: 2px;
+  
 }
 /* Секция контактів */
 .contacts-nav{
@@ -331,7 +346,27 @@ padding-top: 0;
 .image-item:not(:last-child) {
   margin-right: 30px;
 }
+.product-thumb{
+position: relative;
+}
+.aria-label{
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
 
+padding-top: 27px;
+padding-bottom: 27px;
+
+font-weight: 700;
+font-size: var(--primary-font-size);
+line-height: 1.14;
+text-align: center;
+text-transform: uppercase;
+color: var(--light-color);
+background-color: rgba(47, 48, 58, 0.8);
+
+}
 /*   Представлення команди */
 .representation{
   background-color: var(--background-color-section);
@@ -599,7 +634,43 @@ margin-right: 8px;
 .card-link:focus{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.card-image-thumb{
+  position: relative;
+}
+.card-image-thumb::before{
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.card-link:hover .card-image-thumb::before,
+.card-link:hover .card-image-text{
+  opacity: 1;
+}
+.card-link:focus .card-image-thumb::before,
+.card-link:focus .card-image-text{
+  opacity: 1;
+}
+.card-image-text{
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--light-color);
+  opacity: 0;
+  overflow: scroll;
+}
 .card-text{
   padding: 20px 24px;
   border-bottom: 1px solid #EEEEEE;
