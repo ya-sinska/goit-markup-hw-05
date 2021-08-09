@@ -367,6 +367,16 @@ background-image: url(../images/icons/antenna\ 1.svg);
 }
 .product-thumb {
   position: relative;
+
+  transform: rotateY(0deg);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Карточки крутяться */
+.image-item {
+  perspective: 950px;
+}
+.image-item:hover .product-thumb {
+  transform: rotateY(360deg);
 }
 .aria-label {
   position: absolute;
